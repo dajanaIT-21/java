@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
+public class iseseisev 6 {
+    public static void main(String[] args) 
+        {
+        Scanner sisestus = new Scanner(System.in);
+        System.out.print("Sisestage arv: ");
+        int arv = sisestus.nextInt();
+        sisestus.close();
 
-public static void main(String[] args) 
-    {
-    Scanner sisestus = new Scanner(System.in);
-    System.out.print("Sisestage arv: ");
-    int arv = sisestus.nextInt();
-    sisestus.close();
-
-    if (arv % 2 == 0) {
-        System.out.println(arv+" on paaris");
+        if (arv % 2 == 0) {
+            System.out.println(arv+" on paaris :)");
+        }
+        else {
+            System.out.println(arv+" on paaritu :(");
+        }
+        }   
     }
-    else {
-        System.out.println(arv+" on paaritu");
-    }
-    }   
-}
