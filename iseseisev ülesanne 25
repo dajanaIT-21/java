@@ -1,18 +1,33 @@
+import pandas as pd
+import random
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+# load the CSV file into a pandas DataFrame
+df = pd.read_csv("students.csv")
 
-class CsvReader {
-    public static void main(String[] args) {
-       String file = "C:/Users/kevin/Downloads/students.csv";
-       String line;
-        try (BufferedReader br =
-                     new BufferedReader(new FileReader(file))) {
-            while((line = br.readLine()) != null){
-                System.out.println(line);
-            }
-        } catch (Exception e){
-            System.out.println(e);
-        }
-    }
-}
+# number of students in the list
+print("Number of students:", len(df))
+
+# first 10 students
+print("First 10 students:")
+print(df.head(10))
+
+# 3 random students
+print("3 random students:")
+print(df.sample(3))
+
+# only emails
+print("Emails:")
+print(df["Email"])
+
+# first letters of names
+print("First letters of names:")
+print(df["Name"].str[0])
+
+# generate password based on last name and random number
+def generate_password(row):
+    password = row["Last Name"][:3] + str(random.randint(1000, 9999))
+    return password
+
+df["Password"] = df.apply(generate_password, axis=1)
+print("Generated passwords:")
+print(df["Password"])
