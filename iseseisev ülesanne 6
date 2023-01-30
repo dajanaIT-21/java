@@ -14,5 +14,5 @@ import java.util.Scanner;
         else {
             System.out.println(arv+" on paaritu :(");
         }
-        }   
+         
     
