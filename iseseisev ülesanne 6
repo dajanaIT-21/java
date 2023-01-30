@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class iseseisev 6 {
+
     public static void main(String[] args) 
         {
         Scanner sisestus = new Scanner(System.in);
@@ -15,4 +15,4 @@ public class iseseisev 6 {
             System.out.println(arv+" on paaritu :(");
         }
         }   
-    }
+    
