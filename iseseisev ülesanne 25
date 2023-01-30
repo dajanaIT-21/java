@@ -1,29 +1,29 @@
 import pandas as pd
 import random
 
-# load the CSV file into a pandas DataFrame
+
 df = pd.read_csv("students.csv")
 
-# number of students in the list
+# õpilaste number 
 print("Number of students:", len(df))
 
-# first 10 students
+# esimesed 10 õpilast
 print("First 10 students:")
 print(df.head(10))
 
-# 3 random students
+# 3 suvalist õpilast
 print("3 random students:")
 print(df.sample(3))
 
-# only emails
+# emai
 print("Emails:")
 print(df["Email"])
 
-# first letters of names
+# nime esimesed tähed
 print("First letters of names:")
 print(df["Name"].str[0])
 
-# generate password based on last name and random number
+# perekonna nimi + suvakas number = parool
 def generate_password(row):
     password = row["Last Name"][:3] + str(random.randint(1000, 9999))
     return password
