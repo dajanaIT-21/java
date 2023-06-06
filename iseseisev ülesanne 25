@@ -5,29 +5,29 @@ import random
 df = pd.read_csv("students.csv")
 
 # õpilaste number 
-print("Number of students:", len(df))
+print("Õpilaste number:", len(df))
 
 # esimesed 10 õpilast
-print("First 10 students:")
+print("Esimesed 10 õpilast:")
 print(df.head(10))
 
 # 3 suvalist õpilast
-print("3 random students:")
+print("3 suvakat õpilast:")
 print(df.sample(3))
 
 # emai
-print("Emails:")
-print(df["Email"])
+print("Gmail:")
+print(df["Gmail"])
 
 # nime esimesed tähed
-print("First letters of names:")
-print(df["Name"].str[0])
+print("Nime esimesed tähed:")
+print(df["Nimi"].str[0])
 
 # perekonna nimi + suvakas number = parool
 def generate_password(row):
-    password = row["Last Name"][:3] + str(random.randint(1000, 9999))
+    password = row["Pere nimi"][:3] + str(random.randint(1000, 9999))
     return password
 
 df["Password"] = df.apply(generate_password, axis=1)
-print("Generated passwords:")
-print(df["Password"])
+print("Genereeritud parool:")
+print(df["Parool"])
